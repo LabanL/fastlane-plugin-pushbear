@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
+  # spec.extra_rdoc_files = ['README.md', 'LICENSE']
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
