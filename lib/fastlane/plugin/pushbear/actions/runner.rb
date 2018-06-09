@@ -22,13 +22,17 @@ module Pushbear
                 raise UI.user_error!("Response is nil.")
             end
             resultObj = JSON.parse(info)
+            UI.message "Result json: #{resultObj}"
 
-            if resultObj['code'].to_i != 0
+            if resultObj['code'].to_i == 0
+                data = resultObj['data'].to_str
+                UI.success "Send wechat msg is successed! Result is #{data}."
+            elsif resultObj['code'].to_i == 30001
+                UI.success "Successed! No user subscription."
+            else
                 message = resultObj['message'].to_str
                 raise UI.user_error!("Error #{message}.")
             end
-            data = resultObj['data'].to_str
-            UI.success "Send wechat msg is successed! Result is #{data}."
         end
     end
 end

@@ -1,5 +1,5 @@
 lane :test do
-  pushbear("sendkey": "4039-7cd4804ec45f86f5870ba14ef8cca351", 
+  pushbear("sendkey": "4053-d8f1b1ef9f8222301ec9b2b80a02b45f", 
     "text": "测试标题12345678",
     "desp": "测试内容12345678")
 end
